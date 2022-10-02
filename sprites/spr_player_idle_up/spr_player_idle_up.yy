@@ -75,7 +75,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "spr_player_idle",
-    "path": "folders/Sprites/spr_player/spr_player_idle.yy",
+    "name": "Idle",
+    "path": "folders/Sprites/Player/Idle.yy",
   },
 }

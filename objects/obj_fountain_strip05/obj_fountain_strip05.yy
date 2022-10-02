@@ -29,7 +29,11 @@
   "physicsShapePoints": [],
   "eventList": [],
   "properties": [],
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","propertyId":{"name":"useSound","path":"objects/obj_par_env/obj_par_env.yy",},"objectId":{"name":"obj_par_env","path":"objects/obj_par_env/obj_par_env.yy",},"value":"snd_fountain",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","propertyId":{"name":"maxDist","path":"objects/obj_par_env/obj_par_env.yy",},"objectId":{"name":"obj_par_env","path":"objects/obj_par_env/obj_par_env.yy",},"value":"2000",},
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","propertyId":{"name":"fallStart","path":"objects/obj_par_env/obj_par_env.yy",},"objectId":{"name":"obj_par_env","path":"objects/obj_par_env/obj_par_env.yy",},"value":"200",},
+  ],
   "parent": {
     "name": "obj_env",
     "path": "folders/Objects/obj_env.yy",

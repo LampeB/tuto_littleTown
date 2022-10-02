@@ -73,7 +73,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "spr_player_walk",
-    "path": "folders/Sprites/spr_player/spr_player_walk.yy",
+    "name": "walk",
+    "path": "folders/Sprites/Player/walk.yy",
   },
 }
