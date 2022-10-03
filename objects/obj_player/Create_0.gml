@@ -10,7 +10,7 @@ moveU = 0;
 moveD = 0;
 
 //Collision
-nerbyNPC = noone;
+nearbyNPC = noone;
 lookRange = 30;
 hasGreated = false;
 

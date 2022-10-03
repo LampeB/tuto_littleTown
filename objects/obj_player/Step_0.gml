@@ -1,14 +1,16 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-moveR = keyboard_check(vk_right)
-moveL = keyboard_check(vk_left)
-moveU = keyboard_check(vk_up)
-moveD = keyboard_check(vk_down)
+if(global.isPlayerControllable){
+	moveR = keyboard_check(vk_right)
+	moveL = keyboard_check(vk_left)
+	moveU = keyboard_check(vk_up)
+	moveD = keyboard_check(vk_down)
+}
 
 vx = walkSpeed * (moveR-moveL);
 vy = walkSpeed * (moveD-moveU);
 
+//Movement and IDLE
 if (vx == 0 and vy == 0){
 	if(!is_idle and alarm[0] == -1){
 		alarm[0]= time_before_idle;
@@ -63,8 +65,10 @@ else{
 
 
 //Check collision with NPC
-nerbyNPC = collision_rectangle(x-lookRange, y-lookRange, x+lookRange, y+lookRange, obj_par_npc, false, true)
-if (nerbyNPC) {
+/*get the instance of the obj_par_npc our object is 'colliding' with*/
+nearbyNPC = collision_rectangle(x-lookRange, y-lookRange, x+lookRange, y+lookRange, obj_par_npc, false, true)
+
+if (nearbyNPC) {
 	if(!hasGreated){
 		hasGreated = true;
 		audio_play_sound(snd_greeting01, 1, 0);
