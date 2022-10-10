@@ -22,3 +22,4 @@ audio_listener_set_orientation(0,0,1,0,0,0,1);
 time_before_idle = 180;
 is_idle = false;
 
+npcPrompt = noone;

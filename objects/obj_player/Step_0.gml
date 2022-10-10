@@ -1,16 +1,19 @@
-/// @description Insert description here
-// You can write your code in this editor
-if(global.isPlayerControllable){
-	moveR = keyboard_check(vk_right)
-	moveL = keyboard_check(vk_left)
-	moveU = keyboard_check(vk_up)
-	moveD = keyboard_check(vk_down)
-}
+//Movement and IDLE
 
 vx = walkSpeed * (moveR-moveL);
 vy = walkSpeed * (moveD-moveU);
 
-//Movement and IDLE
+if(global.isPlayerControllable){
+	
+	moveR = keyboard_check(vk_right)
+	moveL = keyboard_check(vk_left)
+	moveU = keyboard_check(vk_up)
+	moveD = keyboard_check(vk_down)
+} else {
+	vx = 0;
+	vy = 0;
+}
+
 if (vx == 0 and vy == 0){
 	if(!is_idle and alarm[0] == -1){
 		alarm[0]= time_before_idle;
@@ -69,12 +72,26 @@ else{
 nearbyNPC = collision_rectangle(x-lookRange, y-lookRange, x+lookRange, y+lookRange, obj_par_npc, false, true)
 
 if (nearbyNPC) {
+
 	if(!hasGreated){
 		hasGreated = true;
 		audio_play_sound(snd_greeting01, 1, 0);
 	}
+	
+	if(npcPrompt == noone or npcPrompt == undefined){
+		npcPrompt = scr_showPrompt(nearbyNPC, nearbyNPC.x, nearbyNPC.y-450);	
+	}
 }
 else{
+
+	if(npcPrompt != noone and npcPrompt != undefined){
+
+		if(npcPrompt.isReadyToDestroy){
+			npcPrompt = instance_destroy(npcPrompt);
+		} else { 
+			npcPrompt.fadeMe = "fadeOut";
+		}
+	}
 	hasGreated = false;
 }
 

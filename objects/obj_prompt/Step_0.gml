@@ -9,7 +9,7 @@ switch(fadeMe) {
 	}
 	else {
 		global.isPlayerControllable = true;
-		instance_destroy();
+		isReadyToDestroy = true;
 	}	
    break;
 }
